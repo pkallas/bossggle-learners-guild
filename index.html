@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bossggle</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <script src="bossggle.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="left col-sm-4">
+      <header>
+        <h1>Bossggle</h1>
+      </header>
+
+      <p>Make words by clicking the letters!
+          Only dictionary words count.</p>
+      <div id="points"><p>Score:0</p></div>
+      <hr>
+      <p>List of Words</p>
+      <div id="list"></div>
+    </div>
+
+
+    <div class="right col-md-4">
+      <div class="btn-group">
+        <button class="submit" onclick="submitWord()">Submit</button>
+        <button class="clear" onclick="clearWord()">Clear</button>
+            <div class="grid">
+
+                <div class="row">
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">A</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">Z</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">C</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">F</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">W</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">O</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">L</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">E</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">N</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">A</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">Q</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">M</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">D</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">R</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">U</div>
+                    </div>
+                    <div class="box">
+                        <div class="inner" onclick="buttonClick()">I</div>
+                    </div>
+                </div>
+            </div>
+    </div>
