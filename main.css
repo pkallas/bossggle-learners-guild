@@ -59,7 +59,21 @@ h1 {
 
 #words {
     color: #EAA845;
+    font-size: 2.6rem;
     text-align: center;
+    padding: 5px;
+}
+
+#points {
+    background-color: #EAA845;
+    color: #FAFAFA;
+    font-size: 2.6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0.5vh;
+    width: 10vw;
     padding: 5px;
 }
 
@@ -67,6 +81,7 @@ h1 {
     color: #EAA845;
     font-size: 2.6rem;
     font-weight: 600;
+    margin: 0.5vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
