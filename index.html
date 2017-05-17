@@ -5,31 +5,25 @@
     <meta charset="utf-8">
     <title>Bossggle</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,600,700,800" rel="stylesheet">
     <script src="bossggle.js" charset="utf-8"></script>
 </head>
 
 <body>
-    <div class="left col-sm-4">
-      <header>
-        <h1>Bossggle</h1>
-      </header>
-
-      <p>Make words by clicking the letters!
-          Only dictionary words count.</p>
-      <div id="points"><p>Score:0</p></div>
-      <hr>
-      <p>List of Words</p>
-      <div id="list"></div>
-    </div>
-
-
-    <div class="right col-md-4">
-      <div class="btn-group">
-        <button class="submit" onclick="submitWord()">Submit</button>
-        <button class="clear" onclick="clearWord()">Clear</button>
+    <div class="container">
+        <div class="left-container">
+            <h1>Bossggle</h1>
+            <p>
+                Make words by clicking the letters! Only dictionary words count.</p>
+            <div id="Score">Score:
+                <div id="number">0</div>
+            </div>
+            <hr />
+            <div id="list">Words</div>
+        </div>
+        <div class="right-container">
             <div class="grid">
-
+                <div id="words"></div>
                 <div class="row">
                     <div class="box">
                         <div class="inner" onclick="buttonClick()">A</div>
@@ -86,5 +80,11 @@
                         <div class="inner" onclick="buttonClick()">I</div>
                     </div>
                 </div>
+                <button class="reset" onclick="clearWord()">Reset</button>
             </div>
+            <div class="btn-group">
+                <button class="submit" onclick="submitWord()">Submit</button>
+                <button class="clear" onclick="clearWord()">Clear</button>
+            </div>
+        </div>
     </div>
