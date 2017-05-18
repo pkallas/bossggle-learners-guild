@@ -3,7 +3,8 @@
 }
 
 hr {
-    display: block;
+    display: flex;
+    flex-wrap: wrap-reverse;
     border-width: 1px;
     width: 28vw;
     color: #DDDDDD;
@@ -33,7 +34,7 @@ p {
     align-items: stretch;
     width: 30vw;
     height: 150vh;
-    padding-top: 20px;
+    padding-top: 10px;
     border-right: 1px solid #C0C0C0;
     margin: 2vh;
     background-color: #ECECEC;
@@ -46,35 +47,56 @@ h1 {
     padding: 0;
 }
 
-#Score {
+.score {
     margin-left: 1vw;
     color: #939393;
     padding: 0;
 }
 
-#list {
+.list {
     margin-left: 1vw;
     color: #939393;
+    padding-bottom: 10px;
 }
 
-#words {
+.wordsList {
+    color: #4A4A4A;;
+    font-size: 2.3rem;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    margin: 0;
+    border: 1px solid #ECECEC;
+
+}
+
+.words {
     color: #EAA845;
     font-size: 2.6rem;
+    display: flex;
     text-align: center;
-    padding: 5px;
+    justify-content: center;
+    padding-bottom: 50px;
+    margin: 0;
+    border: 1px solid #FFFFFF;
 }
 
-#points {
+.points {
     background-color: #EAA845;
     color: #FAFAFA;
     font-size: 2.6rem;
     text-align: center;
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: flex-end;
+    align-content: flex-end;
     margin: 0.5vh;
-    width: 10vw;
+    width: 15%;
     padding: 5px;
+    border-radius: 6px;
 }
 
 #number {
@@ -92,17 +114,14 @@ h1 {
     display: flex;
     flex-shrink: 3;
     width: auto;
-    height: 75vh;
+    height: 70vh;
     padding-top: 2%;
     padding-left: 10%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .btn-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 50px 0 0 0;
+    margin: 40px 0 0 0;
 }
 
 .submit {
@@ -140,17 +159,22 @@ h1 {
     border: none;
 }
 
+
 .reset {
     font-size: 1.1rem;
     font-weight: 700;
     background-color: #4A4A4A;
     color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
     height: 5.6vh;
     width: 11.5vh;
     margin-top: 13px;
+    margin-left: 274px;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
     border: none;
     box-shadow: none;
 }
