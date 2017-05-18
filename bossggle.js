@@ -28,20 +28,27 @@ function vowelCheck() {
   for (var i = 0; i < boxLetter.length; i++) {
     boxLetter[i].innerHTML
   };
-  if (boxLetter.innerHTML.indexOf('A') === -1 || boxLetter.innerHTML.indexOf('E') === -1 ||
-      boxLetter.innerHTML.indexOf('I') === -1 || boxLetter.innerHTML.indexOf('O') === -1 ||
-      boxLetter.innerHTML.indexOf('I') === -1)  {
-        randomLetter();
-  };
+  do {
+    randomLetter();
+  }
+  while (boxLetter.innerHTML.indexOf('A', 'E', 'I', 'O', 'U') === -1)
 };
 
+var array1 = [];
+var array2 = [];
+var array3 = [];
+var array4 = [];
+var array5 = [];
 /* Create a function to be used to add clicked letter to words element,
 and change the color of the box to orange */
 function buttonClick() {
   var letter = event.target.innerHTML;
-  var display = document.getElementsByClassName("words").innerHTML;
-  display.push(letter);
-  display.join('');
+  array1.push(letter);
+  array2 = array1.join('');
+  var displayedWord = document.getElementsByClassName("displayedWords")
+  for (var i = 0; i < displayedWord.length; i++) {
+    displayedWord[i].innerHTML = array2;
+  };
   event.target.style.backgroundColor = '#FEA221';
   event.target.disabled = true;
 };
@@ -55,31 +62,44 @@ remain commented out until it proves necessary */
 // Create a function that clears the words and all selected letters
 function clearWord() {
 // Loop through all of the boxes
- var boxLetter = document.getElementsByClassName('inner');
+  var boxLetter = document.getElementsByClassName('inner');
     for (var i = 0; i < boxLetter.length; i++) {
-//  If the color of the current box is orange, change it to solid gray
-     if (boxLetter[i].style.backgroundColor === '#FEA221')
-      { boxLetter[i].style.backgroundColor = '#999999';
-        boxLetter[i].disabled = false;
-     };
-   };
-  document.getElementsByClassName("words").innerHTML = [];
+// Change the color of boxes to grey and reenable them
+      boxLetter[i].style.backgroundColor = '#999999';
+      boxLetter[i].disabled = false;
+  };
+  var displayedWord = document.getElementsByClassName("displayedWords");
+    for (var t = 0; t < displayedWord.length; t++) {
+      displayedWord[t].innerHTML = array3;
+  };
+  array1 = [];
+  array2 = [];
 };
 
 /* Create a function that takes the length of a string and multiplies it by 9,
-then adds that value to points to use as a submit button */
+then adds that value to points; then it will move the displayed word over to
+the side where a word column exists*/
 function submitWord() {
-  var displayedWord = document.getElementsByClassName("words").innerHTML;
-  var pointsDisplay = document.getElementsByClassName("points").innerHTML;
-  var wordsDisplay = document.getElementsByClassName("list").innerHTML;
-  var playerScore = document.getElementsByClassName("number").innerHTML;
-  var pointsValue = displayedWord.length * 9;
-  playerScore = playerScore + pointsValue;
-  pointsDisplay.unshift(pointsValue);
-  displayedWord.split();
-  wordsDisplay.unshift(displayedWord);
-  wordsDisplay.split('');
-  clearword();
+  var displayedWord = document.getElementsByClassName("displayedWords");
+  var pointsDisplay = document.getElementsByClassName("points");
+  var wordsDisplay = document.getElementsByClassName("wordsList");
+  var playerScore = document.getElementsByClassName("number");
+  var pointsValue = array2.length * 9;
+  for (var i = 0; i < playerScore.length; i++) {
+    playerScore[i].innerHTML = array5
+  };
+  for (var i = 0; i < playerScore.length; i++) {
+    playerScore[i].innerHTML = array5 + pointsValue;
+  };
+  for (var z = 0; z < pointsDisplay.length; z++) {
+    pointsDisplay.innerHTML[z].unshift(pointsValue);
+  };
+  array4 = array2.split();
+  for (var w = 0; w < wordsDisplay.length; w++) {
+    wordsDisplay.innerHTML[w].unshift(array4);
+    wordsDisplay.innerHTML[w].join('');
+  };
+  clearWord();
 };
 
 
@@ -87,9 +107,18 @@ function submitWord() {
 re-randomizing the letters in the table */
 function resetWord() {
   clearWord();
-  document.getElementsByClassName("points").innerHTML = [];
-  document.getElementsByClassName("list").innerHTML = [];
-  document.getElementsByClassName("number").innerHTML = [];
+  var points = document.getElementsByClassName("points");
+  for (var i = 0; i < points.length; i++) {
+    points[i].innerHTML = [];
+  };
+  var list = document.getElementsByClassName("wordsList");
+  for (var q = 0; q < list.length; q++) {
+    list[q].innerHTML = [];
+  };
+  var number = document.getElementsByClassName("number");
+  for (var w = 0; w < number.length; w++) {
+    number[w].innerHTML = [];
+  };
   randomLetter();
   vowelCheck();
 };
