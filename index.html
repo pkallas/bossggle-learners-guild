@@ -16,18 +16,19 @@
             <h1>Bossggle</h1>
             <p>
                 Make words by clicking the letters! Only dictionary words count.</p>
-            <div class="score">Score:
-                <div class="number">0</div>
-            </div>
+            <div class="score">Score:</div>
+            <div class="number"></div>
             <hr />
-            <div class="list">Words</div>
+            <div class="words">Words</div>
             <div class="wordsList">BOGGLE</div>
-            <div class="points">20
+            <div class="points">20</div>
+            <div class="githubFork">
+                <a href="https://github.com/pkallas/bossggle-learners-guild">Fork Me on Github</a>
             </div>
         </div>
         <div class="right-container">
             <div class="grid">
-                <div class="words">WORDS</div>
+                <div class="displayedWords">WORDS</div>
                 <div class="row">
                     <div class="box">
                         <div class="inner" onclick="buttonClick()">A</div>
@@ -86,9 +87,9 @@
                 </div>
                 <button class="reset" onclick="resetWord()">Reset</button>
             </div>
-            <div class="btn-group">
-                <button class="submit" onclick="submitWord()">Submit</button>
-                <button class="clear" onclick="clearWord()">Clear</button>
-            </div>
+        </div>
+        <div class="btn-group">
+            <button class="submit" onclick="submitWord()">Submit</button>
+            <button class="clear" onclick="clearWord()">Clear</button>
         </div>
     </div>
