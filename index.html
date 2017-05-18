@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bossggle</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,600,700,800" rel="stylesheet">
@@ -16,16 +17,17 @@
             <p>
                 Make words by clicking the letters! Only dictionary words count.</p>
             <div class="score">Score:
-                <div class="number">0</div>
+                <div id="number">0</div>
             </div>
             <hr />
             <div class="list">Words</div>
-            <div class="points">ABC
+            <div class="wordsList">BOGGLE</div>
+            <div class="points">20
             </div>
         </div>
         <div class="right-container">
             <div class="grid">
-                <div class="words"></div>
+                <div class="words">WORDS</div>
                 <div class="row">
                     <div class="box">
                         <div class="inner" onclick="buttonClick()">A</div>
