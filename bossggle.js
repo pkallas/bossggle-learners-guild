@@ -77,9 +77,9 @@ function submitWord() {
   score += selectedLetters.length * 9;
   playerScore.innerText = score;
   scoreDisplay.unshift(selectedLetters.length * 9);
-  pointsDisplay.innerText = scoreDisplay.join("");
+  pointsDisplay.innerText = scoreDisplay.join("  ");
   completedWords.unshift(displayedWord.innerText);
-  wordsDisplay.innerText = completedWords.join("");
+  wordsDisplay.innerText = completedWords.join("  ");
   clearWord();
 };
 
