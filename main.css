@@ -83,7 +83,6 @@ p {
     padding: 10px 0 0 12px;
     border: 1px solid #ECECEC;
     margin: 0;
-    flex-grow: 0;
 }
 
 .points {
@@ -106,7 +105,7 @@ p {
     display: flex;
     color: #4A4A4A;
     font-size: 0.8rem;
-    margin: 525px 0 0 10px;
+    margin: 300px 0 0 10px;
 }
 
 .right-container {
