@@ -1,6 +1,6 @@
-// Use onload command to have page load with random words and correct colors
+// Use onload command to have page load with random words
 window.onload = function () {
-  randomLetter()
+  randomLetter();
 };
 
 /* Create a function to obtain a value between 65 and 90, the Unicode values for
@@ -30,7 +30,7 @@ function hasVowel() {
   var letters = boxes.map(function (box) {
     return box.innerText
   })
-  return /[AEIOU]/.test(letters.join(''))
+  return /[AEIOU]/.test(letters.join(""))
 };
 
 var selectedLetters = [];
@@ -44,8 +44,8 @@ function buttonClick() {
   if (event.target.hasAttribute('disabled')) return;
   var letter = event.target.innerText;
   selectedLetters.push(letter);
-  var displayedWord = document.querySelector(".displayedWords")
-  displayedWord.innerHTML = selectedLetters.join('');
+  var displayedWord = document.querySelector(".displayedWords");
+  displayedWord.innerText = selectedLetters.join("");
   event.target.setAttribute('disabled', true);
   event.target.style.backgroundColor = '#FEA221';
 };
@@ -67,16 +67,19 @@ function clearWord() {
 then adds that value to points; then it will move the displayed word over to
 the side where a word column exists*/
 function submitWord() {
+  if (document.querySelector(".displayedWords").innerText === "") {
+    return alert("Add letters before clicking Submit")
+  };
   var displayedWord = document.querySelector(".displayedWords");
   var pointsDisplay = document.querySelector(".points");
   var wordsDisplay = document.querySelector(".wordsList");
   var playerScore = document.querySelector(".number");
   score += selectedLetters.length * 9;
-  playerScore.innerText = score
+  playerScore.innerText = score;
   scoreDisplay.unshift(selectedLetters.length * 9);
-  pointsDisplay.innerText = scoreDisplay;
-  completedWords.unshift(selectedLetters);
-  wordsDisplay.innerText = completedWords;
+  pointsDisplay.innerText = scoreDisplay.join("");
+  completedWords.unshift(displayedWord.innerText);
+  wordsDisplay.innerText = completedWords.join("");
   clearWord();
 };
 
@@ -90,25 +93,9 @@ function resetWord() {
   var list = document.querySelector(".wordsList");
   list.innerText = '';
   var number = document.querySelector(".number");
-  number.innerText = '';
+  number.innerText = 0;
+  completedWords = [];
+  scoreDisplay = [];
+  score = 0;
   randomLetter();
 };
-
-// Create a function to unfade the submit button
-// function unfadeSubmit() {
-//   var submitButton = document.querySelector(".submit");
-//   submitButton.style.backgroundColor = '#C7E69A'
-// };
-// //
-// // Create a function to unfade clear button
-// function unfadeClear() {
-//   var clearButton = document.querySelector(".clear");
-//   clearButton.style.backgroundColor = '#F3AEB5'
-// };
-// // Add event listener for submit button to change color
-// document.querySelector(".submit");.addEventListener("DOMContentLoaded",
-// setTimeout(unfadeSubmit(), 5000));
-//
-// // Add event listener for clear button to change color
-// document.querySelector(".clear");.addEventListener("DOMContentLoaded",
-// setTimeout(unfadeClear(), 5000));
